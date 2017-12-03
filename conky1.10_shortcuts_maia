@@ -1,15 +1,15 @@
 conky.config = {
 	alignment = 'top_left',
 	background = true,
-	color2 = '588078',
+	color2 = '73938A',
 	cpu_avg_samples = 2,
-	default_color = '80FFF9',
+	default_color = '349692',
 	double_buffer = true,
-	font = 'Bitstream Vera Sans:size=8',
+	font = 'Bitstream Vera Sans:size=8.5',
 	draw_shades = false,
-	gap_x = 30,
-	gap_y = 20,
-	maximum_width = 245,
+	gap_x = 25,
+	gap_y = 10,
+	minimum_width = 200,
 	no_buffers = true,
 	own_window = true,
 	own_window_type = 'override',
@@ -17,52 +17,55 @@ conky.config = {
 	update_interval = 2.0,
 	use_xft = true,
 }
-
 conky.text = [[
-${voffset 0}$color${font Bitstream Vera Sans:size=16}${execi 10000 awk -F= '/TION/ {print $2}' /etc/lsb-release |sed 's/"//g'} ${execi 10000 awk -F= '/EASE=/ {printf $2" "}' /etc/lsb-release} $font
-${voffset 8}$color2${kernel} ${goto 120}$hr
-${font Bitstream Vera Sans:size=8.5}
-${voffset 5}$color0${alignc}i3-wm CONFIGURATION : 
-${color2}open new terminal --------------> $alignr${color}mod+Enter
-${color2}kill focused ------------------------------> $alignr${color}mod+q
-${color2}split vertically --------------------------> $alignr${color}mod+v
-${color2}split horizontally -----------------------> $alignr${color}mod+h
-${color2}toggle floating -----------> $alignr${color}mod+Shift+Space
-${color2}switch to workspace 1-8 ---------> $alignr${color}mod+1-8
-${color2}toggle split direction ---------> $alignr${color}mod+Shift+q
-${color2}send to workspace 1-8 -------> $alignr${color}mod+Ctrl+1-8
-${color2}navigate workspace --> $alignr${color}mod+Ctrl+arrows
+
+#$color2$hr
+${font Comfortaa:bold:size=20}${color}Arch linux
+${voffset -10}${font Comfortaa:bold:size=10}$color2 on ${font Comfortaa:bold:size=10} ${color} i3-WM ${goto 150}${voffset -20}${color #A7A7A7}${font Raleway Regular:size=18} $font powered by
+${font Comfortaa:bold:size=10} ${voffset 18}${color #bbb}${kernel} ${goto 150}$color$hr $font
+
+$color${alignc}i3-wm CONFIGURATION : 
+$color2$hr
+${color2}open new terminal - $alignr${color}mod+Enter
+${color2}kill focused - $alignr${color}mod+q
+${color2}split vertically - $alignr${color}mod+v
+${color2}split horizontally - $alignr${color}mod+h
+${color2}toggle floating - $alignr${color}mod+Shift+Space
+${color2}switch to workspace 1-8 - $alignr${color}mod+1-8
 $color2$hr
 
-$color0${alignc}APPLICATION MENU :
-${color2}bmenu -----------------------------> $alignr${color}mod+Ctrl+b
-${color2}gmrun -----------------------------> $alignr${color}mod+space
-${color2}dmenu ------------------------------------> $alignr${color}mod+d
-${color2}rofi menu ---------------------------------> $alignr${color}mod+x
-${color2}morc_menu ------------------------------> $alignr${color}mod+z
+$color${alignc}APPLICATION MENU :
+$color$hr
+${color2}bmenu - $alignr${color}mod+Ctrl+b
+${color2}gmrun - $alignr${color}mod+space
+${color2}dmenu - $alignr${color}mod+d
+${color2}rofi menu - $alignr${color}mod+x
+${color2}morc_menu - $alignr${color}mod+z
 $color2$hr
 
-${alignc}${color0}i3 SHORTCUTS :
-${color2}File Manager --------------------------> $alignr${color}mod+F3
-${color2}Google Chrome ----------------------> $alignr${color}mod+F2
-${color2}Audacious music ---------------------> $alignr${color}mod+m
-${color2}Cmus music player -----------------> $alignr${color}mod+F5
-${color2}Ranger file manager ---------------> $alignr${color}mod+F4
-${color2}w3m text browser -------------> $alignr${color}mod+Ctrl+w
-${color2}E-links text browser -----------> $alignr${color}mod+Ctrl+e
-${color2}Start lampp server -------------> $alignr${color}mod+Ctrl+l
-${color2}Stop lampp server -------------> $alignr${color}mod+Shift+l
-${color2}Start tor circuit -------------------> $alignr${color}mod+Ctrl+t
-${color2}Stop tor circuit ------------------> $alignr${color}mod+Shift+t
+${alignc}${color}i3 SHORTCUTS :
+$color$hr
+${color2}Atom - $alignr${color}mod+F7
+${color2}Sublime Text - $alignr${color}mod+F8
+${color2}File Manager - $alignr${color}mod+F3
+${color2}Google Chrome - $alignr${color}mod+F2
+${color2}Firefox Beta - $alignr${color}mod+F6
+${color2}Audacious music - $alignr${color}mod+m
+${color2}Cmus music player - $alignr${color}mod+F5
+${color2}Ranger file manager - $alignr${color}mod+F4
+${color2}w3m text browser - $alignr${color}mod+Ctrl+w
+${color2}E-links text browser - $alignr${color}mod+Ctrl+e
+${color2}Start lampp server - $alignr${color}mod+Ctrl+l
+${color2}Stop lampp server - $alignr${color}mod+Shift+l
+${color2}Start tor circuit - $alignr${color}mod+Ctrl+t
+${color2}Stop tor circuit - $alignr${color}mod+Shift+t
 $color2$hr
 
-$alignc${color0}i3 SYSTEM OPTIONS :
-${voffset 5}${color2}help --------------------------------> $alignr${color}mod+Shift+h
-${color2}lock -----------------------------------------> $alignr${color}mod+9 
-${color2}exit -----------------------------------------> $alignr${color}mod+0
-
+$alignc${color}i3 SYSTEM OPTIONS :
+$color$hr
+${voffset 5}${color2}help - $alignr${color}mod+Shift+h
+${color2}lock - $alignr${color}mod+9 
+${color2}exit - $alignr${color}mod+0
 $color2$hr
-${goto 75}$color2$hr
-${goto 150}$color2$hr
-${goto 200}$color2$hr
+
 ]]
