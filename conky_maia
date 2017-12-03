@@ -1,81 +1,71 @@
 conky.config = {
-	alignment = 'top_right',
+	alignment = 'top_left',
 	background = true,
-	color2 = '588078',
+	color2 = '73938A',
 	cpu_avg_samples = 2,
-	default_color = '80FFF9',
+	default_color = '349692',
 	double_buffer = true,
-	font = 'Bitstream Vera Sans:size=8',
+	font = 'Bitstream Vera Sans:size=8.5',
 	draw_shades = false,
 	gap_x = 25,
-	gap_y = 13,
+	gap_y = 10,
 	minimum_width = 200,
 	no_buffers = true,
 	own_window = true,
 	own_window_type = 'override',
 	own_window_transparent = true,
-	update_interval = 1.0,
+	update_interval = 2.0,
 	use_xft = true,
 }
 conky.text = [[
-$color2${goto 190}$hr
-$color2${goto 150}$hr
-$color2${goto 100}$hr
-$color2${goto 50}$hr
+
+#$color2$hr
+${font Comfortaa:bold:size=20}${color}Arch linux
+${voffset -10}${font Comfortaa:bold:size=10}$color2 on ${font Comfortaa:bold:size=10} ${color} i3-WM ${goto 150}${voffset -20}${color #A7A7A7}${font Raleway Regular:size=18} $font powered by
+${font Comfortaa:bold:size=10} ${voffset 18}${color #bbb}${kernel} ${goto 150}$color$hr $font
+
+$color${alignc}i3-wm CONFIGURATION : 
 $color2$hr
-${voffset 18}$color2${font Bitstream Vera Sans:size=16}${time %A}$font\
-${voffset -8}$alignr$color${font Bitstream Vera Sans:size=38}${time %e}$font
-$color${voffset -30}$color${font Bitstream Vera Sans:size=18}${time %b}$font\
-${voffset -3} $color${font Bitstream Vera Sans:size=20}${time %Y}$font$color$hr
-${voffset 20}$color2$hr
-${voffset 4}$alignc$color${font Bitstream Vera Sans:size=16}${time %R %Z}$font
-$color2${hr}${goto 10}
-#
-${voffset 30}${goto 40}${color}CPU${font Bitstream Vera Sans:bold:size=8}$alignr$cpu%
-${voffset 5}${goto 40}$font$color2${top name 1}$alignr$color${top cpu 1}%
-${goto 40}$color2${top name 2}$alignr$color${top cpu 2}%
-${goto 40}$color2${top name 3}$alignr$color${top cpu 3}%
-${goto 40}$color2${top name 4}$alignr$color${top cpu 4}%
-# ${goto 40}$color2${top name 5}$alignr$color${top cpu 5}%
-#
-${voffset 10}${goto 40}${color}RAM${font Bitstream Vera Sans:bold:size=8}$alignr$mem$font
-${goto 40}${voffset 5}$color2${top_mem name 1}$alignr$color${top_mem mem_res 1}
-${goto 40}$color2${top_mem name 2}$alignr$color${top_mem mem_res 2}
-${goto 40}$color2${top_mem name 3}$alignr$color${top_mem mem_res 3}
-${goto 40}$color2${top_mem name 4}$alignr$color${top_mem mem_res 4}
-# ${goto 40}$color2${top_mem name 5}$alignr$color${top_mem mem_res 5}
-#
-${voffset 10}${goto 40}${color}Swap${font Bitstream Vera Sans:bold:size=8}$alignr${swap}/ ${swapfree}
-${voffset 10}$color2$hr
-${voffset 10}${goto 40}${color2}Download speed :${goto 120}${color}$alignr${downspeedf wlp3s0} KiB/s
-#${downspeedgraph wlp3s0 20,}
-${voffset 10}${goto 40}${color2}Upload speed :${goto 120}${color}$alignr${upspeedf wlp3s0} KiB/s 
-#${upspeedgraph wlp3s0 20,} 
-
-${offset 0}$color2$hr
-${voffset 10}${goto 40}${color2}Total downloaded : ${color}${alignr}${totaldown wlp3s0}
-${voffset 10}${goto 40}${color2}Total uploaded : ${color}${alignr}${totalup wlp3s0}
-#${color1}IP:${color2}${alignr}${execi 400 curl icanhazip.com}
-#${color1}Lan:${color2}${alignr}${addr enp4s0}
-#${color1}↑ Up:${color2}${alignr}${upspeed enp4s0}
-#${color1}${upspeedgraph enp4s0 20,120 668ABF 383C4A}
-#${color1}Total: ${color2}${alignr}${totalup enp4s0}
-#${voffset -5}${color3}${hr}
-#${color1}↓ Down:${color2}${alignr}${downspeed enp4s0}
-#${color1}${downspeedgraph enp4s0 20,120 668ABF 383C4A}
-#${color2}Total Downloaded: ${color}${alignr}${totaldown enp4s0}
-
+${color2}open new terminal - $alignr${color}mod+Enter
+${color2}kill focused - $alignr${color}mod+q
+${color2}split vertically - $alignr${color}mod+v
+${color2}split horizontally - $alignr${color}mod+h
+${color2}toggle floating - $alignr${color}mod+Shift+Space
+${color2}switch to workspace 1-8 - $alignr${color}mod+1-8
 $color2$hr
-${voffset 15}$color0$font$alignr${execi 10000 awk -F= '/TION/ {print $2}' /etc/lsb-release |sed 's/"//g'} \
-${execi 10000 awk -F= '/EASE=/ {printf $2" "} /NAME/ {print $2}' /etc/lsb-release}
-${voffset 10}${color2}${alignr}${execi 1200 whoami}@${nodename}
-${alignr}${color2}${font Bitstream Vera Sans:size=8}uptime: ${color}${uptime_short}
-${voffset 5}${color2}${font Bitstream Vera Sans:size=8}${alignr}kernel: ${color0}${kernel}
 
-${offset 0}$color2$hr
-$color2${goto 50}$hr
-$color2${goto 100}$hr
-#$color2${goto 150}$hr 
-#$color2${goto 190}$hr
+$color${alignc}APPLICATION MENU :
+$color$hr
+${color2}bmenu - $alignr${color}mod+Ctrl+b
+${color2}gmrun - $alignr${color}mod+space
+${color2}dmenu - $alignr${color}mod+d
+${color2}rofi menu - $alignr${color}mod+x
+${color2}morc_menu - $alignr${color}mod+z
+$color2$hr
+
+${alignc}${color}i3 SHORTCUTS :
+$color$hr
+${color2}Atom - $alignr${color}mod+F7
+${color2}Sublime Text - $alignr${color}mod+F8
+${color2}File Manager - $alignr${color}mod+F3
+${color2}Google Chrome - $alignr${color}mod+F2
+${color2}Firefox Beta - $alignr${color}mod+F6
+${color2}Audacious music - $alignr${color}mod+m
+${color2}Cmus music player - $alignr${color}mod+F5
+${color2}Ranger file manager - $alignr${color}mod+F4
+${color2}w3m text browser - $alignr${color}mod+Ctrl+w
+${color2}E-links text browser - $alignr${color}mod+Ctrl+e
+${color2}Start lampp server - $alignr${color}mod+Ctrl+l
+${color2}Stop lampp server - $alignr${color}mod+Shift+l
+${color2}Start tor circuit - $alignr${color}mod+Ctrl+t
+${color2}Stop tor circuit - $alignr${color}mod+Shift+t
+$color2$hr
+
+$alignc${color}i3 SYSTEM OPTIONS :
+$color$hr
+${voffset 5}${color2}help - $alignr${color}mod+Shift+h
+${color2}lock - $alignr${color}mod+9 
+${color2}exit - $alignr${color}mod+0
+$color2$hr
 
 ]]
